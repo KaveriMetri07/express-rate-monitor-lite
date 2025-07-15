@@ -1,0 +1,15 @@
+# 💻 Node & dev
+node_modules/
+.env
+logs/
+.DS_Store
+
+# 👨‍💻 VSCode / editor
+.vscode/
+.idea/
+
+# 🛠 Build / Cache
+*.log
+*.lock
+dist/
+coverage/

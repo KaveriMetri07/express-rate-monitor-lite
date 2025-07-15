@@ -1,0 +1,32 @@
+{
+  "name": "express-rate-monitor",
+  "version": "1.0.0",
+  "description": "Express middleware for rate limiting and request logging using MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "middleware",
+    "rate-limit",
+    "logger",
+    "mongodb",
+    "security",
+    "es6"
+  ],
+  "author": "Kaveri_M_Metri",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "mongoose": "^8.16.3",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
