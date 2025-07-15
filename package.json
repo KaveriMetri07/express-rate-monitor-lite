@@ -1,5 +1,5 @@
 {
-  "name": "express-rate-monitor",
+  "name": "express-rate-monitor-lite",
   "version": "1.0.0",
   "description": "Express middleware for rate limiting and request logging using MongoDB",
   "main": "index.js",
