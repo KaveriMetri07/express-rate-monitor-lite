@@ -77,26 +77,30 @@ connectTODB().then(() => {
 
 ## **Webhook Alert Format**
 
-    When rate limit is exceeded (in alert mode or block mode), a webhook alert will be sent as:
-    ``json
+    When a rate limit is exceeded (in either alert or block mode), a POST request is sent to your webhook URL with the following JSON payload:
+    ```json
     {
-      "content": " Rate limit exceeded by IP: ::1 on endpoint: /"
+      "content": "🚨 Rate limit exceeded by IP: ::1 on endpoint: /"
     }
     ```
+    This allows you to receive real-time alerts when your API is being abused or when a rate limit is hit.
     Great for integrating with tools like Discord or Slack.
 
 ## **Configuration Options**
 
-| Option          | Type       | Default   | Description                                        |
-| --------------- | ---------- | --------- | -------------------------------------------------- |
-| limit           | Number     | 100       | Max requests per IP + endpoint                     |
-| window          | Number     | 60        | Time window (in seconds)                           |
-| mode            | String     | "block"   | "block" or "alert" mode                            |
-| webhookUrl      | String     | null      | Optional webhook URL for alerts                    |
-| --------------- | ---------- | --------- | -------------------------------------------------- |
+| Option       | Type   | Default   | Description                                 |
+| ------------ | ------ | --------- | ------------------------------------------- |
+| `limit`      | Number | `100`     | Max requests allowed within the time window |
+| `window`     | Number | `60`      | Time window in seconds                      |
+| `mode`       | String | `"block"` | `"alert"` logs only, `"block"` sends 429    |
+| `webhookUrl` | String | `null`    | Optional URL to send abuse alerts           |
 
 ## **Author**
 
 Created by **Kaveri** —
 Inspired by real-world security issues faced in production apps.
 Let your Express app defend itself like a pro!
+
+## **License**
+
+Licensed under the MIT License
